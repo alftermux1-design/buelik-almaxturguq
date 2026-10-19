@@ -1,0 +1,2 @@
+# buelik-almaxturguq
+birlik
