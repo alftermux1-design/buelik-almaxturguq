@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html lang="ug" dir="rtl" data-theme="light" data-cat="length">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2563eb">
+<title>ئۆلچەم بىرلىكى ئايلاندۇرغۇچ</title>
+<style>
+/* ═══════════════════════════════════════════════════════════
+   🎨 COLOR TOKENS — رەڭ تېمىلىرى
+   ═══════════════════════════════════════════════════════════ */
+:root{
+  /* Primary palette */
+  --blue1:#2563eb;   --blue2:#3b82f6;   --blueX:#eff6ff;
+  --cyan1:#0891b2;   --cyan2:#06b6d4;   --cyanX:#ecfeff;
+  --violet1:#7c3aed; --violet2:#8b5cf6; --violetX:#f5f3ff;
+  --pink1:#db2777;   --pink2:#ec4899;   --pinkX:#fdf2f8;
+  --rose1:#e11d48;   --rose2:#f43f5e;   --roseX:#fff1f2;
+  --red1:#dc2626;    --red2:#ef4444;    --redX:#fef2f2;
+  --orange1:#ea580c; --orange2:#f97316; --orangeX:#fff7ed;
+  --amber1:#d97706;  --amber2:#f59e0b;  --amberX:#fffbeb;
+  --yellow1:#ca8a04; --yellow2:#eab308; --yellowX:#fefce8;
+  --lime1:#65a30d;   --lime2:#84cc16;   --limeX:#f7fee7;
+  --green1:#16a34a;  --green2:#22c55e;  --greenX:#f0fdf4;
+  --emerald1:#059669;--emerald2:#10b981;--emeraldX:#ecfdf5;
+  --teal1:#0d9488;   --teal2:#14b8a6;   --tealX:#f0fdfa;
+  --indigo1:#4f46e5; --indigo2:#6366f1; --indigoX:#eef2ff;
+  --purple1:#9333ea; --purple2:#a855f7; --purpleX:#faf5ff;
+  --fuchsia1:#c026d3;--fuchsia2:#d946ef;--fuchsiaX:#fdf4ff;
+
+  /* Neutrals */
+  --t1:#0f172a; --t2:#334155; --t3:#64748b; --t4:#94a3b8;
+  --s1:#ffffff; --s2:#f8fafc; --s3:#f1f5f9;
+  --ln:#e2e8f0; --ln2:#cbd5e1;
+
+  /* Semantic */
+  --ok:#16a34a; --okX:#dcfce7;
+  --er:#dc2626; --erX:#fee2e2;
+  --wr:#d97706; --wrX:#fef3c7;
+
+  /* Shadows */
+  --sh1:0 2px 8px rgba(15,23,42,.06);
+  --sh2:0 8px 28px rgba(15,23,42,.1);
+  --sh3:0 24px 60px rgba(15,23,42,.18);
+  --fo:0 0 0 4px rgba(37,99,235,.18);
+
+  /* Shape */
+  --r1:10px; --r2:14px; --r3:18px; --r4:24px;
+
+  /* Motion */
+  --t:.25s cubic-bezier(.4,0,.2,1);
+}
+
+/* 🌙 Dark theme */
+[data-theme="dark"]{
+  --blue1:#60a5fa;   --blue2:#93c5fd;   --blueX:#172554;
+  --cyan1:#22d3ee;   --cyan2:#67e8f9;   --cyanX:#083344;
+  --violet1:#a78bfa; --violet2:#c4b5fd; --violetX:#2e1065;
+  --pink1:#f472b6;   --pink2:#f9a8d4;   --pinkX:#500724;
+  --rose1:#fb7185;   --rose2:#fda4af;   --roseX:#4c0519;
+  --red1:#f87171;    --red2:#fca5a5;    --redX:#450a0a;
+  --orange1:#fb923c; --orange2:#fdba74; --orangeX:#431407;
+  --amber1:#fbbf24;  --amber2:#fcd34d;  --amberX:#451a03;
+  --yellow1:#facc15; --yellow2:#fde047; --yellowX:#422006;
+  --lime1:#a3e635;   --lime2:#bef264;   --limeX:#1a2e05;
+  --green1:#4ade80;  --green2:#86efac;  --greenX:#052e16;
+  --emerald1:#34d399;--emerald2:#6ee7b7;--emeraldX:#022c22;
+  --teal1:#2dd4bf;   --teal2:#5eead4;   --tealX:#042f2e;
+  --indigo1:#818cf8; --indigo2:#a5b4fc; --indigoX:#1e1b4b;
+  --purple1:#c084fc; --purple2:#d8b4fe; --purpleX:#3b0764;
+  --fuchsia1:#e879f9;--fuchsia2:#f0abfc;--fuchsiaX:#4a044e;
+
+  --t1:#f1f5f9; --t2:#cbd5e1; --t3:#94a3b8; --t4:#64748b;
+  --s1:#0f172a; --s2:#1e293b; --s3:#334155;
+  --ln:#1e293b; --ln2:#334155;
+
+  --sh1:0 2px 8px rgba(0,0,0,.4);
+  --sh2:0 8px 28px rgba(0,0,0,.5);
+  --sh3:0 24px 60px rgba(0,0,0,.7);
+  --fo:0 0 0 4px rgba(96,165,250,.3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   🎯 CATEGORY-SPECIFIC COLORS — ھەر تۈرگە ئۆز رەڭگى
+   ═══════════════════════════════════════════════════════════ */
+[data-cat="length"]       { --acc1:var(--blue1);    --acc2:var(--blue2);    --accX:var(--blueX);    --accRgb:37,99,235;  }
+[data-cat="mass"]         { --acc1:var(--orange1);  --acc2:var(--orange2);  --accX:var(--orangeX);  --accRgb:234,88,12;  }
+[data-cat="temperature"]  { --acc1:var(--red1);     --acc2:var(--red2);     --accX:var(--redX);     --accRgb:220,38,38;  }
+[data-cat="area"]         { --acc1:var(--green1);   --acc2:var(--green2);   --accX:var(--greenX);   --accRgb:22,163,74;  }
+[data-cat="volume"]       { --acc1:var(--cyan1);    --acc2:var(--cyan2);    --accX:var(--cyanX);    --accRgb:8,145,178;  }
+[data-cat="time"]         { --acc1:var(--indigo1);  --acc2:var(--indigo2);  --accX:var(--indigoX);  --accRgb:79,70,229;  }
+[data-cat="speed"]        { --acc1:var(--violet1);  --acc2:var(--violet2);  --accX:var(--violetX);  --accRgb:124,58,237; }
+[data-cat="data"]         { --acc1:var(--purple1);  --acc2:var(--purple2);  --accX:var(--purpleX);  --accRgb:147,51,234; }
+[data-cat="pressure"]     { --acc1:var(--pink1);    --acc2:var(--pink2);    --accX:var(--pinkX);    --accRgb:219,39,119; }
+[data-cat="energy"]       { --acc1:var(--amber1);   --acc2:var(--amber2);   --accX:var(--amberX);   --accRgb:217,119,6;  }
+[data-cat="power"]        { --acc1:var(--yellow1);  --acc2:var(--yellow2);  --accX:var(--yellowX);  --accRgb:202,138,4;  }
+[data-cat="angle"]        { --acc1:var(--teal1);    --acc2:var(--teal2);    --accX:var(--tealX);    --accRgb:13,148,136; }
+[data-cat="frequency"]    { --acc1:var(--fuchsia1); --acc2:var(--fuchsia2); --accX:var(--fuchsiaX); --accRgb:192,38,211; }
+[data-cat="force"]        { --acc1:var(--rose1);    --acc2:var(--rose2);    --accX:var(--roseX);    --accRgb:225,29,72;  }
+[data-cat="acceleration"] { --acc1:var(--red1);     --acc2:var(--orange2);  --accX:var(--redX);     --accRgb:220,38,38;  }
+[data-cat="density"]      { --acc1:var(--blue1);    --acc2:var(--cyan2);    --accX:var(--blueX);    --accRgb:37,99,235;  }
+[data-cat="flow"]         { --acc1:var(--cyan1);    --acc2:var(--teal2);    --accX:var(--cyanX);    --accRgb:8,145,178;  }
+[data-cat="fuel"]         { --acc1:var(--lime1);    --acc2:var(--lime2);    --accX:var(--limeX);    --accRgb:101,163,13; }
+[data-cat="illuminance"]  { --acc1:var(--amber1);   --acc2:var(--yellow2);  --accX:var(--amberX);   --accRgb:217,119,6;  }
+[data-cat="electric"]     { --acc1:var(--yellow1);  --acc2:var(--amber2);   --accX:var(--yellowX);  --accRgb:202,138,4;  }
+[data-cat="torque"]       { --acc1:var(--emerald1); --acc2:var(--emerald2); --accX:var(--emeraldX); --accRgb:5,150,105;  }
+[data-cat="radioactivity"]{ --acc1:var(--green1);   --acc2:var(--lime2);    --accX:var(--greenX);   --accRgb:22,163,74;  }
+
+/* ═══════════════════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"Noto Naskh Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
+  font-size:15px;line-height:1.6;color:var(--t1);
+  background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 25%,#ecfeff 50%,#fdf4ff 75%,#fef3c7 100%);
+  background-attachment:fixed;
+  min-height:100vh;padding:16px 14px 60px;
+  transition:background var(--t),color var(--t);
+  -webkit-font-smoothing:antialiased;
+  position:relative;overflow-x:hidden;
+}
+[data-theme="dark"] body{
+  background:linear-gradient(135deg,#0b1220 0%,#020617 25%,#0a1f33 50%,#1e1b4b 75%,#431407 100%);
+}
+/* Animated color blobs in background */
+body::before,body::after{
+  content:"";position:fixed;border-radius:50%;
+  filter:blur(80px);opacity:.35;z-index:-1;pointer-events:none;
+  transition:opacity var(--t);
+}
+body::before{
+  width:400px;height:400px;top:-100px;inset-inline-start:-100px;
+  background:linear-gradient(135deg,var(--blue2),var(--violet2),var(--pink2));
+  animation:float1 20s ease-in-out infinite;
+}
+body::after{
+  width:500px;height:500px;bottom:-150px;inset-inline-end:-150px;
+  background:linear-gradient(135deg,var(--cyan2),var(--teal2),var(--lime2));
+  animation:float2 25s ease-in-out infinite;
+}
+[data-theme="dark"] body::before,[data-theme="dark"] body::after{opacity:.18}
+@keyframes float1{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(80px,60px) scale(1.1)}
+}
+@keyframes float2{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(-80px,-60px) scale(1.15)}
+}
+button,input,select{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer;border:none;background:none}
+::selection{background:var(--acc1);color:#fff}
+.app{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+
+/* ═══════════════════════════════════════════════════════════
+   HEADER — رەڭلىك باش قىسىم
+   ═══════════════════════════════════════════════════════════ */
+.top{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;margin-bottom:20px;flex-wrap:wrap;
+}
+.logo-wrap{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
+.logo{
+  width:52px;height:52px;flex-shrink:0;border-radius:16px;
+  background:conic-gradient(from 0deg,
+    var(--blue1),var(--cyan1),var(--green1),var(--yellow1),
+    var(--orange1),var(--red1),var(--pink1),var(--violet1),var(--blue1));
+  color:#fff;font-size:1.6rem;font-weight:900;
+  display:grid;place-items:center;
+  box-shadow:0 8px 24px rgba(var(--accRgb),.4);
+  transition:transform var(--t);user-select:none;
+  position:relative;animation:spin 12s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.logo span{animation:spin 12s linear infinite reverse}
+.logo:hover{transform:rotate(-8deg) scale(1.08);animation-play-state:paused}
+.logo-txt{min-width:0;flex:1}
+.logo-txt h1{
+  font-size:clamp(1rem,3vw,1.35rem);font-weight:800;
+  background:linear-gradient(90deg,
+    var(--blue1),var(--cyan1),var(--green1),var(--violet1),var(--pink1),var(--blue1));
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  line-height:1.25;
+  animation:rainbowText 6s linear infinite;
+}
+@keyframes rainbowText{
+  0%{background-position:0% 50%}
+  100%{background-position:300% 50%}
+}
+.logo-txt p{
+  font-size:.75rem;color:var(--t3);font-weight:500;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  display:none;
+}
+@media(min-width:520px){.logo-txt p{display:block}}
+.tools{display:flex;gap:8px;flex-shrink:0}
+.tool{
+  width:44px;height:44px;border-radius:13px;
+  border:1.5px solid var(--ln);background:var(--s1);
+  color:var(--t2);font-size:1.05rem;
+  display:grid;place-items:center;
+  transition:var(--t);position:relative;
+}
+.tool:hover{
+  border-color:var(--acc1);color:var(--acc1);
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 6px 18px rgba(var(--accRgb),.25);
+}
+.tool:active{transform:scale(.94)}
+.tool .badge{
+  position:absolute;top:-4px;inset-inline-end:-4px;
+  min-width:18px;height:18px;padding:0 5px;
+  background:linear-gradient(135deg,var(--red1),var(--pink1));
+  color:#fff;border-radius:99px;
+  font-size:.6rem;font-weight:800;line-height:18px;text-align:center;
+  border:2px solid var(--s1);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SEARCH — ئىزدەش
+   ═══════════════════════════════════════════════════════════ */
+.search-wrap{position:relative;margin-bottom:16px;z-index:20}
+.search{
+  width:100%;padding:14px 46px 14px 20px;
+  border:1.5px solid var(--ln);border-radius:var(--r3);
+  background:var(--s1);color:var(--t1);
+  font-size:.94rem;font-weight:500;
+  transition:var(--t);outline:none;box-shadow:var(--sh1);
+}
+[dir="rtl"] .search{padding:14px 20px 14px 46px}
+.search:focus{
+  border-color:var(--acc1);
+  box-shadow:0 0 0 4px rgba(var(--accRgb),.18);
+  transform:translateY(-1px);
+}
+.search-ico{
+  position:absolute;top:50%;transform:translateY(-50%);
+  inset-inline-end:16px;color:var(--t4);pointer-events:none;
+  transition:color var(--t);
+}
+.search:focus~.search-ico{color:var(--acc1)}
+.search-res{
+  position:absolute;top:calc(100% + 8px);inset-inline:0;
+  background:var(--s1);border:1.5px solid var(--ln);border-radius:var(--r3);
+  box-shadow:var(--sh3);max-height:380px;overflow-y:auto;
+  display:none;z-index:30;
+}
+.search-res.on{display:block;animation:popIn .22s cubic-bezier(.34,1.56,.64,1)}
+@keyframes popIn{from{opacity:0;transform:translateY(-8px) scale(.98)}to{opacity:1;transform:none}}
+.sitem{
+  padding:11px 16px;cursor:pointer;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid var(--ln);
+  transition:background var(--t),padding var(--t);font-size:.87rem;
+}
+.sitem:last-child{border-bottom:none}
+.sitem:hover{
+  background:linear-gradient(90deg,rgba(var(--accRgb),.08),transparent);
+  padding-inline-start:22px;
+}
+.sitem .sn{font-weight:700;color:var(--t2);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sitem .ss{font-family:monospace;font-size:.75rem;color:var(--t4);direction:ltr}
+.sitem .sc{
+  font-size:.65rem;font-weight:700;color:#fff;
+  padding:3px 9px;border-radius:99px;
+  background:linear-gradient(135deg,var(--acc1),var(--acc2));
+  box-shadow:0 2px 6px rgba(var(--accRgb),.3);
+}
+.sempty{padding:22px;text-align:center;color:var(--t4);font-size:.85rem}
+
+/* ═══════════════════════════════════════════════════════════
+   TABS — رەڭلىك تاڭلاش
+   ═══════════════════════════════════════════════════════════ */
+.tabs{
+  display:flex;gap:7px;overflow-x:auto;
+  padding:3px 2px 12px;scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex-shrink:0;padding:9px 15px;border-radius:12px;
+  border:1.5px solid var(--ln);background:var(--s1);
+  color:var(--t2);font-size:.84rem;font-weight:600;
+  transition:var(--t);white-space:nowrap;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.tab:hover{
+  border-color:var(--acc1);color:var(--acc1);
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(var(--accRgb),.15);
+}
+.tab.on{
+  background:linear-gradient(135deg,var(--acc1),var(--acc2));
+  color:#fff;border-color:transparent;
+  box-shadow:0 6px 18px rgba(var(--accRgb),.4);
+  transform:translateY(-2px);
+}
+.tab .ti{font-size:.95rem;line-height:1}
+
+/* Language tabs — unique colors */
+#langTabs .tab.on:nth-child(1){
+  background:linear-gradient(135deg,var(--cyan1),var(--blue2));
+  box-shadow:0 6px 18px rgba(8,145,178,.4);
+}
+#langTabs .tab.on:nth-child(2){
+  background:linear-gradient(135deg,var(--green1),var(--emerald2));
+  box-shadow:0 6px 18px rgba(22,163,74,.4);
+}
+#langTabs .tab.on:nth-child(3){
+  background:linear-gradient(135deg,var(--red1),var(--rose2));
+  box-shadow:0 6px 18px rgba(220,38,38,.4);
+}
+#langTabs .tab.on:nth-child(4){
+  background:linear-gradient(135deg,var(--violet1),var(--purple2));
+  box-shadow:0 6px 18px rgba(124,58,237,.4);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CARD — رەڭلىك كارتا
+   ═══════════════════════════════════════════════════════════ */
+.card{
+  background:var(--s1);
+  border:1.5px solid var(--ln);
+  border-radius:var(--r4);padding:22px;margin-bottom:16px;
+  box-shadow:var(--sh2);
+  transition:background var(--t),border-color var(--t),box-shadow var(--t);
+  position:relative;overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;top:0;inset-inline:0;height:4px;
+  background:linear-gradient(90deg,var(--acc1),var(--acc2),var(--acc1));
+  background-size:200% 100%;
+  animation:shine 4s linear infinite;
+  border-radius:var(--r4) var(--r4) 0 0;
+}
+@keyframes shine{to{background-position:200% 0}}
+.card-h{
+  display:flex;align-items:center;gap:10px;
+  font-size:.93rem;font-weight:800;
+  margin-bottom:16px;color:var(--t1);
+}
+.card-h::before{
+  content:"";width:4px;height:20px;border-radius:99px;
+  background:linear-gradient(180deg,var(--acc1),var(--acc2));
+  flex-shrink:0;
+  box-shadow:0 0 12px rgba(var(--accRgb),.5);
+}
+.card-h .cnt{
+  margin-inline-start:auto;font-size:.68rem;font-weight:800;
+  color:#fff;padding:3px 11px;border-radius:99px;
+  background:linear-gradient(135deg,var(--acc1),var(--acc2));
+  box-shadow:0 2px 8px rgba(var(--accRgb),.3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONVERTER — ئايلاندۇرغۇچ
+   ═══════════════════════════════════════════════════════════ */
+.field{margin-bottom:4px}
+.field-lbl{
+  display:flex;align-items:center;gap:8px;
+  font-size:.72rem;font-weight:800;color:var(--t3);
+  letter-spacing:.4px;text-transform:uppercase;
+  margin-bottom:9px;
+}
+.field-dot{
+  width:10px;height:10px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--acc1),var(--acc2));
+  box-shadow:0 0 0 4px var(--accX),0 0 12px rgba(var(--accRgb),.6);
+}
+.field.to .field-dot{
+  background:linear-gradient(135deg,var(--cyan1),var(--teal2));
+  box-shadow:0 0 0 4px var(--cyanX),0 0 12px rgba(8,145,178,.6);
+}
+.field-row{display:flex;gap:8px;align-items:stretch}
+.field-input{
+  flex:1;min-width:0;padding:15px 18px;
+  border:2px solid var(--ln);border-radius:var(--r3);
+  background:var(--s1);color:var(--t1);
+  font-size:1.2rem;font-weight:700;
+  direction:ltr;text-align:left;outline:none;
+  transition:var(--t);font-variant-numeric:tabular-nums;
+}
+.field-input:focus{
+  border-color:var(--acc1);
+  box-shadow:0 0 0 4px rgba(var(--accRgb),.18);
+  transform:translateY(-1px);
+}
+.field-input.ok{
+  border-color:var(--ok);
+  box-shadow:0 0 0 4px var(--okX);
+}
+.field-input.er{
+  border-color:var(--er);
+  box-shadow:0 0 0 4px var(--erX);
+  animation:shake .4s;
+}
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-5px)}
+  40%{transform:translateX(5px)}
+  60%{transform:translateX(-3px)}
+  80%{transform:translateX(3px)}
+}
+.field-input[readonly]{
+  background:linear-gradient(135deg,var(--accX),rgba(var(--accRgb),.05));
+  color:var(--acc1);cursor:default;
+  font-weight:800;
+}
+.field-sel{
+  flex:0 1 44%;min-width:0;
+  padding:15px 38px 15px 14px;
+  border:2px solid var(--ln);border-radius:var(--r3);
+  background:var(--s1);color:var(--t1);
+  font-size:.88rem;font-weight:600;
+  cursor:pointer;outline:none;
+  transition:var(--t);
+  -webkit-appearance:none;-moz-appearance:none;appearance:none;
+  background-image:
+    linear-gradient(45deg,transparent 50%,var(--t3) 50%),
+    linear-gradient(135deg,var(--t3) 50%,transparent 50%);
+  background-position:calc(100% - 19px) 50%, calc(100% - 14px) 50%;
+  background-size:5px 5px,5px 5px;
+  background-repeat:no-repeat;
+  text-overflow:ellipsis;
+}
+[dir="rtl"] .field-sel{
+  padding:15px 14px 15px 38px;
+  background-position:19px 50%, 24px 50%;
+}
+.field-sel:focus{
+  border-color:var(--acc1);
+  box-shadow:0 0 0 4px rgba(var(--accRgb),.18);
+}
+
+.swap-row{
+  display:flex;justify-content:center;
+  margin:14px 0;position:relative;
+}
+.swap-row::before{
+  content:"";position:absolute;top:50%;inset-inline:0;height:2px;
+  background:linear-gradient(90deg,
+    transparent,var(--acc1) 20%,var(--acc2) 80%,transparent);
+  opacity:.3;z-index:0;
+  border-radius:99px;
+}
+.swap-btn{
+  position:relative;z-index:1;
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--acc1),var(--acc2));
+  color:#fff;font-size:1.3rem;
+  display:grid;place-items:center;
+  box-shadow:0 8px 24px rgba(var(--accRgb),.45);
+  transition:var(--t);user-select:none;
+  border:3px solid var(--s1);
+}
+.swap-btn:hover{
+  transform:rotate(180deg) scale(1.1);
+  box-shadow:0 12px 32px rgba(var(--accRgb),.55);
+}
+.swap-btn:active{transform:rotate(180deg) scale(.92)}
+
+/* status */
+.status{
+  margin-top:16px;padding:11px 18px;
+  border-radius:var(--r2);
+  font-size:.84rem;font-weight:700;
+  text-align:center;min-height:42px;
+  display:flex;align-items:center;justify-content:center;
+  transition:var(--t);
+}
+.status.emp{
+  background:linear-gradient(135deg,var(--amberX),rgba(217,119,6,.08));
+  color:var(--amber1);
+  border:1px solid rgba(217,119,6,.2);
+}
+.status.ok{
+  background:linear-gradient(135deg,var(--okX),rgba(22,163,74,.05));
+  color:var(--ok);
+  border:1px solid rgba(22,163,74,.2);
+}
+.status.er{
+  background:linear-gradient(135deg,var(--erX),rgba(220,38,38,.05));
+  color:var(--er);
+  border:1px solid rgba(220,38,38,.2);
+}
+.status.wr{
+  background:linear-gradient(135deg,var(--wrX),rgba(217,119,6,.05));
+  color:var(--wr);
+  border:1px solid rgba(217,119,6,.2);
+}
+
+/* result */
+.result{
+  margin-top:16px;padding:20px;
+  border-radius:var(--r3);
+  background:linear-gradient(135deg,
+    var(--accX) 0%,
+    rgba(var(--accRgb),.08) 50%,
+    var(--cyanX) 100%);
+  border:2px dashed rgba(var(--accRgb),.35);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;flex-wrap:wrap;
+  position:relative;overflow:hidden;
+}
+.result::before{
+  content:"";position:absolute;
+  top:-50%;inset-inline-end:-50%;
+  width:200px;height:200px;
+  background:radial-gradient(circle,rgba(var(--accRgb),.15) 0%,transparent 70%);
+  border-radius:50%;
+  animation:pulse 3s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:.5}
+  50%{transform:scale(1.15);opacity:.8}
+}
+.result-v{
+  font-size:clamp(1.25rem,4vw,1.75rem);font-weight:900;
+  color:var(--acc1);direction:ltr;text-align:left;
+  word-break:break-all;font-variant-numeric:tabular-nums;
+  letter-spacing:-.4px;flex:1;min-width:0;
+  position:relative;z-index:1;
+}
+.copy-btn{
+  flex-shrink:0;padding:12px 22px;border-radius:12px;
+  background:linear-gradient(135deg,var(--acc1),var(--acc2));
+  color:#fff;font-size:.82rem;font-weight:800;
+  box-shadow:0 6px 18px rgba(var(--accRgb),.4);
+  transition:var(--t);
+  position:relative;z-index:1;
+}
+.copy-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(var(--accRgb),.55);
+}
+.copy-btn:active{transform:scale(.95)}
+.copy-btn.done{
+  background:linear-gradient(135deg,var(--ok),var(--emerald2));
+  box-shadow:0 6px 18px rgba(22,163,74,.4);
+}
+
+/* explain */
+.explain{margin-top:18px;padding-top:18px;border-top:1.5px solid var(--ln)}
+.explain-r{
+  padding:12px 16px;margin-bottom:9px;
+  background:var(--s2);border:1px solid var(--ln);
+  border-radius:var(--r1);
+  font-size:.85rem;direction:ltr;text-align:left;
+  font-family:"SF Mono",Consolas,monospace;
+  color:var(--t2);word-break:break-all;
+  transition:var(--t);
+}
+.explain-r:last-child{margin-bottom:0}
+.explain-r b{color:var(--acc1);font-weight:800}
+.explain-r.hl{
+  background:linear-gradient(135deg,var(--accX),rgba(var(--accRgb),.06));
+  border-color:rgba(var(--accRgb),.25);
+  box-shadow:0 2px 8px rgba(var(--accRgb),.08);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   QUICK GRID — تېز نەتىجە
+   ═══════════════════════════════════════════════════════════ */
+.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:11px}
+.qitem{
+  position:relative;padding:13px 15px;
+  background:linear-gradient(135deg,var(--s2),rgba(var(--accRgb),.03));
+  border:1.5px solid var(--ln);
+  border-radius:var(--r2);cursor:pointer;
+  transition:var(--t);overflow:hidden;
+}
+.qitem::before{
+  content:"";position:absolute;top:0;inset-inline-start:0;
+  width:3px;height:100%;
+  background:linear-gradient(180deg,var(--acc1),var(--acc2));
+  transform:scaleY(0);transform-origin:top;
+  transition:transform var(--t);
+}
+.qitem:hover{
+  border-color:var(--acc1);
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(var(--accRgb),.2);
+}
+.qitem:hover::before{transform:scaleY(1)}
+.qitem:active{transform:translateY(-1px) scale(.98)}
+.qitem.on{
+  border-color:var(--acc1);
+  background:linear-gradient(135deg,
+    var(--accX) 0%,
+    rgba(var(--accRgb),.06) 100%);
+  box-shadow:0 6px 20px rgba(var(--accRgb),.18);
+}
+.qitem.on::before{transform:scaleY(1)}
+.qname{
+  font-size:.72rem;font-weight:700;color:var(--t3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  margin-bottom:3px;padding-inline-end:22px;
+}
+.qval{
+  font-size:1.02rem;font-weight:800;color:var(--acc1);
+  direction:ltr;text-align:left;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  line-height:1.3;
+}
+.qsym{
+  font-size:.66rem;font-weight:700;color:var(--t4);
+  font-family:monospace;direction:ltr;
+}
+.qstar{
+  position:absolute;top:9px;inset-inline-end:11px;
+  width:22px;height:22px;border-radius:50%;
+  display:grid;place-items:center;font-size:.85rem;
+  color:var(--t4);opacity:0;transition:var(--t);
+  user-select:none;
+}
+.qitem:hover .qstar{opacity:1}
+.qstar.on{
+  color:#fff;opacity:1;
+  background:linear-gradient(135deg,var(--amber1),var(--yellow2));
+  box-shadow:0 3px 10px rgba(217,119,6,.5);
+}
+.qstar:hover{transform:scale(1.15)}
+
+/* ═══════════════════════════════════════════════════════════
+   TABLE — جەدۋەل
+   ═══════════════════════════════════════════════════════════ */
+.table-wrap{
+  overflow-x:auto;border-radius:var(--r2);
+  border:1px solid var(--ln);-webkit-overflow-scrolling:touch;
+}
+table{width:100%;border-collapse:collapse;font-size:.86rem;min-width:360px}
+th,td{padding:11px 14px;text-align:start;border-bottom:1px solid var(--ln)}
+th{
+  position:sticky;top:0;z-index:1;
+  background:linear-gradient(180deg,var(--s2),rgba(var(--accRgb),.05));
+  font-size:.69rem;font-weight:800;color:var(--t3);
+  text-transform:uppercase;letter-spacing:.4px;
+}
+tbody tr{transition:background var(--t),transform var(--t)}
+tbody tr:hover{
+  background:linear-gradient(90deg,rgba(var(--accRgb),.06),transparent);
+}
+tbody tr.hl{
+  background:linear-gradient(90deg,
+    var(--accX) 0%,
+    rgba(var(--accRgb),.08) 30%,
+    transparent 100%);
+  position:relative;
+}
+tbody tr.hl::before{
+  content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;
+  width:3px;
+  background:linear-gradient(180deg,var(--acc1),var(--acc2));
+  box-shadow:0 0 12px rgba(var(--accRgb),.6);
+}
+tbody tr.hl td{color:var(--acc1);font-weight:800}
+tbody tr:last-child td{border-bottom:none}
+.c-name{font-weight:600}
+.c-sym{font-family:monospace;font-size:.77rem;color:var(--t4);direction:ltr;text-align:left}
+.c-val{
+  direction:ltr;text-align:right;font-family:monospace;
+  font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.c-star{
+  width:42px;text-align:center;color:var(--t4);
+  cursor:pointer;transition:var(--t);font-size:.95rem;user-select:none;
+}
+.c-star:hover{transform:scale(1.3);color:var(--amber1)}
+.c-star.on{color:var(--amber1);text-shadow:0 0 12px rgba(217,119,6,.5)}
+
+/* ═══════════════════════════════════════════════════════════
+   MODAL
+   ═══════════════════════════════════════════════════════════ */
+.modal{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(15,23,42,.6);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  display:none;align-items:flex-start;justify-content:center;
+  padding:60px 16px 20px;
+}
+.modal.on{display:flex;animation:fadeIn .25s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.mbox{
+  background:var(--s1);border:1.5px solid var(--ln);
+  border-radius:var(--r4);box-shadow:var(--sh3);
+  max-width:520px;width:100%;max-height:82vh;
+  display:flex;flex-direction:column;overflow:hidden;
+  animation:slideUp .32s cubic-bezier(.34,1.56,.64,1);
+  position:relative;
+}
+.mbox::before{
+  content:"";position:absolute;top:0;inset-inline:0;height:4px;
+  background:linear-gradient(90deg,var(--acc1),var(--acc2),var(--acc1));
+  background-size:200% 100%;
+  animation:shine 4s linear infinite;
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(28px) scale(.96)}to{opacity:1;transform:none}}
+.mhead{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 22px;border-bottom:1px solid var(--ln);flex-shrink:0;
+}
+.mhead h2{
+  font-size:1.05rem;font-weight:800;
+  background:linear-gradient(90deg,var(--acc1),var(--acc2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.mhead .ma{display:flex;gap:6px}
+.mbody{padding:18px 22px 22px;overflow-y:auto}
+
+/* settings */
+.srow{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;padding:14px 0;border-bottom:1px solid var(--ln);
+}
+.srow:last-child{border-bottom:none}
+.sinfo{flex:1;min-width:0}
+.sinfo label{font-size:.88rem;font-weight:700;color:var(--t2);display:block}
+.sinfo .hint{font-size:.71rem;color:var(--t4);margin-top:2px}
+.seg{
+  display:inline-flex;flex-shrink:0;
+  background:var(--s2);border:1px solid var(--ln);
+  border-radius:11px;padding:3px;gap:2px;
+}
+.seg button{
+  padding:7px 12px;border-radius:8px;
+  font-size:.76rem;font-weight:700;color:var(--t3);
+  transition:var(--t);
+}
+.seg button:hover{color:var(--acc1)}
+.seg button.on{
+  background:linear-gradient(135deg,var(--acc1),var(--acc2));
+  color:#fff;
+  box-shadow:0 3px 10px rgba(var(--accRgb),.4);
+}
+.sw{
+  position:relative;flex-shrink:0;
+  width:46px;height:26px;border-radius:99px;
+  background:var(--ln2);cursor:pointer;transition:var(--t);
+}
+.sw::after{
+  content:"";position:absolute;top:2px;inset-inline-start:2px;
+  width:22px;height:22px;border-radius:50%;
+  background:#fff;transition:var(--t);
+  box-shadow:0 1px 4px rgba(0,0,0,.25);
+}
+.sw.on{
+  background:linear-gradient(135deg,var(--acc1),var(--acc2));
+  box-shadow:0 3px 12px rgba(var(--accRgb),.4);
+}
+.sw.on::after{inset-inline-start:22px}
+
+/* history */
+.hlist{display:flex;flex-direction:column;gap:8px}
+.hitem{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 15px;
+  background:linear-gradient(135deg,var(--s2),rgba(var(--accRgb),.03));
+  border:1px solid var(--ln);border-radius:var(--r2);
+  cursor:pointer;transition:var(--t);font-size:.85rem;
+  position:relative;overflow:hidden;
+}
+.hitem::before{
+  content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;
+  width:3px;
+  background:linear-gradient(180deg,var(--acc1),var(--acc2));
+  transform:scaleY(0);transform-origin:top;
+  transition:transform var(--t);
+}
+.hitem:hover{
+  border-color:var(--acc1);
+  transform:translateX(3px);
+  box-shadow:0 6px 20px rgba(var(--accRgb),.15);
+}
+.hitem:hover::before{transform:scaleY(1)}
+[dir="rtl"] .hitem:hover{transform:translateX(-3px)}
+.hitem .hex{
+  flex:1;direction:ltr;text-align:left;
+  font-family:monospace;color:var(--t2);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.hitem .hex b{color:var(--acc1);font-weight:800}
+.hitem .ht{flex-shrink:0;font-size:.68rem;color:var(--t4)}
+.hempty{text-align:center;padding:36px;color:var(--t4);font-size:.85rem}
+
+/* ═══════════════════════════════════════════════════════════
+   TOAST
+   ═══════════════════════════════════════════════════════════ */
+.toast{
+  position:fixed;bottom:28px;inset-inline-start:50%;
+  transform:translateX(-50%) translateY(100px);
+  padding:13px 24px;border-radius:99px;
+  background:linear-gradient(135deg,var(--acc1),var(--acc2));
+  color:#fff;font-size:.85rem;font-weight:800;
+  box-shadow:0 12px 40px rgba(var(--accRgb),.5);
+  z-index:200;opacity:0;pointer-events:none;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .3s;
+  max-width:calc(100vw - 32px);text-align:center;
+}
+[dir="rtl"] .toast{transform:translateX(50%) translateY(100px)}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+[dir="rtl"] .toast.on{transform:translateX(50%) translateY(0)}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+@media(max-width:560px){
+  body{padding:12px 10px 50px}
+  .logo{width:46px;height:46px;font-size:1.4rem;border-radius:14px}
+  .tool{width:40px;height:40px;border-radius:11px}
+  .card{padding:17px 15px;border-radius:var(--r3)}
+  .field-sel{flex-basis:46%;font-size:.8rem;padding:14px 32px 14px 12px}
+  [dir="rtl"] .field-sel{padding:14px 12px 14px 32px}
+  .field-input{padding:14px 15px;font-size:1.08rem}
+  .qgrid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:9px}
+  .qitem{padding:11px 13px}
+  .modal{padding:40px 10px 10px}
+  th,td{padding:10px 11px;font-size:.81rem}
+}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,var(--acc1),var(--acc2));
+  border-radius:99px;
+  border:2px solid transparent;background-clip:content-box;
+}
+::-webkit-scrollbar-thumb:hover{background:var(--acc1);background-clip:content-box}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ══ HEADER ══ -->
+  <header class="top">
+    <div class="logo-wrap">
+      <div class="logo"><span>⇄</span></div>
+      <div class="logo-txt">
+        <h1 id="appTitle"></h1>
+        <p id="appSub"></p>
+      </div>
+    </div>
+    <div class="tools">
+      <button class="tool" id="themeBtn" title="Theme">🌙</button>
+      <button class="tool" id="settingsBtn" title="Settings">⚙</button>
+      <button class="tool" id="historyBtn" title="History">
+        🕐<span class="badge" id="histBadge" style="display:none">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══ SEARCH ══ -->
+  <div class="search-wrap">
+    <input class="search" id="searchInput" autocomplete="off" spellcheck="false">
+    <span class="search-ico">🔍</span>
+    <div class="search-res" id="searchRes"></div>
+  </div>
+
+  <!-- ══ LANGUAGE TABS ══ -->
+  <nav class="tabs" id="langTabs"></nav>
+
+  <!-- ══ CATEGORY TABS ══ -->
+  <nav class="tabs" id="catTabs"></nav>
+
+  <!-- ══ CONVERTER ══ -->
+  <main class="card">
+    <div class="field from">
+      <div class="field-lbl"><span class="field-dot"></span><span id="lblFrom"></span></div>
+      <div class="field-row">
+        <input class="field-input" id="fromInput" dir="ltr" autocomplete="off" spellcheck="false">
+        <select class="field-sel" id="fromSel"></select>
+      </div>
+    </div>
+
+    <div class="swap-row">
+      <button class="swap-btn" id="swapBtn" title="Swap">⇅</button>
+    </div>
+
+    <div class="field to">
+      <div class="field-lbl"><span class="field-dot"></span><span id="lblTo"></span></div>
+      <div class="field-row">
+        <input class="field-input" id="toInput" dir="ltr" readonly>
+        <select class="field-sel" id="toSel"></select>
+      </div>
+    </div>
+
+    <div class="status emp" id="status"></div>
+
+    <div class="result">
+      <div class="result-v" id="resultV">—</div>
+      <button class="copy-btn" id="copyBtn"></button>
+    </div>
+
+    <div class="explain">
+      <div class="explain-r hl" id="ex1">—</div>
+      <div class="explain-r" id="ex2">—</div>
+      <div class="explain-r" id="ex3">—</div>
+    </div>
+  </main>
+
+  <!-- ══ QUICK ══ -->
+  <section class="card">
+    <div class="card-h">
+      <span id="quickTitle"></span>
+      <span class="cnt" id="quickCnt"></span>
+    </div>
+    <div class="qgrid" id="qgrid"></div>
+  </section>
+
+  <!-- ══ TABLE ══ -->
+  <section class="card">
+    <div class="card-h"><span id="tableTitle"></span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th id="th1"></th>
+          <th id="th2" style="text-align:left"></th>
+          <th id="th3" style="text-align:right"></th>
+          <th style="width:42px"></th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+
+<!-- ══ SETTINGS MODAL ══ -->
+<div class="modal" id="settingsModal">
+  <div class="mbox">
+    <div class="mhead">
+      <h2 id="settingsTitle">⚙</h2>
+      <button class="tool" data-close="settingsModal">✕</button>
+    </div>
+    <div class="mbody">
+      <div class="srow">
+        <div class="sinfo"><label id="lblTheme"></label><div class="hint" id="hintTheme"></div></div>
+        <div class="seg" id="segTheme">
+          <button data-v="light">☀</button>
+          <button data-v="dark">🌙</button>
+          <button data-v="auto">A</button>
+        </div>
+      </div>
+      <div class="srow">
+        <div class="sinfo"><label id="lblDec"></label><div class="hint" id="hintDec"></div></div>
+        <div class="seg" id="segDec">
+          <button data-v="2">2</button>
+          <button data-v="4">4</button>
+          <button data-v="6">6</button>
+          <button data-v="10">10</button>
+          <button data-v="auto">A</button>
+        </div>
+      </div>
+      <div class="srow">
+        <div class="sinfo"><label id="lblSci"></label><div class="hint" id="hintSci"></div></div>
+        <div class="sw" id="swSci"></div>
+      </div>
+      <div class="srow">
+        <div class="sinfo"><label id="lblTh"></label><div class="hint" id="hintTh"></div></div>
+        <div class="sw" id="swTh"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HISTORY MODAL ══ -->
+<div class="modal" id="historyModal">
+  <div class="mbox">
+    <div class="mhead">
+      <h2 id="historyTitle">🕐</h2>
+      <div class="ma">
+        <button class="tool" id="clearHist" title="Clear">🗑</button>
+        <button class="tool" data-close="historyModal">✕</button>
+      </div>
+    </div>
+    <div class="mbody">
+      <div class="hlist" id="hlist"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+/* ═══════════════════════════════════════════════════════════
+   ① I18N
+   ═══════════════════════════════════════════════════════════ */
+const I18N = {
+  ug:{name:"ئۇيغۇرچە",flag:"🇺🇿",dir:"rtl",
+    title:"ئۆلچەم بىرلىكى ئايلاندۇرغۇچ",
+    sub:"22 تۈر · 300+ بىرلىك · ئاپتوماتىك ھېسابلاش",
+    ph:"بىرلىك ئىزدەش... (مەس: مېتر، kg، celsius)",
+    from:"دىن",to:"غا",copy:"كۆچۈرۈش",copied:"كۆچۈرۈلدى",
+    qTitle:"تېز نەتىجىلەر",tTitle:"تەپسىلىي جەدۋەل",
+    thU:"بىرلىك",thS:"بەلگە",thV:"قىممەت",
+    mEmp:"سان ياكى ھېساب ئىپادىسى كىرگۈزۈڭ (مەس: 2*3+1)",
+    mOk:"✓ ئىپادە توغرا — ئاپتوماتىك ھېسابلاندى",
+    mEr:"✗ خاتا! پەقەت سان ۋە + − × ÷ ( ) . ئىشلىتىڭ",
+    mNeg:"⚠ مەنپىي قىممەت بۇ تۈردە مەنىسىز",
+    rel:"ئاساسىي مۇناسىۋەت",fac:"ئايلاندۇرۇش ئامىلى",cal:"ھېسابلاش",
+    set:"تەڭشەكلەر",
+    sTh:"كۆرۈنۈش",sThH:"يورۇق / قاراڭغۇ / ئاپتوماتىك",
+    sDec:"ئونلۇق خانە",sDecH:"نەتىجە دەللىكى",
+    sSci:"ئىلمىي ئىپادىلەش",sSciH:"چوڭ ۋە كىچىك سانلار ئۈچۈن",
+    sTh2:"مىڭلىق ئايرىغۇچ",sTh2H:"1,234,567.89 شەكلىدە",
+    hist:"ئايلاندۇرۇش تارىخى",histEmp:"تارىخ يوق",clr:"تارىخ تازىلاندى",
+    favA:"★ ساقلىدى",favR:"☆ ئۆچۈرۈلدى",sEmp:"ھېچ نەرسە تېپىلمىدى",
+    cats:{length:"ئۇزۇنلۇق",mass:"ئېغىرلىق",temperature:"تېمپېراتۇرا",
+      area:"يۈز",volume:"ھەجىم",time:"ۋاقىت",speed:"سۈرئەت",
+      data:"سانلىق مەلۇمات",pressure:"بېسىم",energy:"ئېنېرگىيە",
+      power:"قۇۋۋەت",angle:"بۇرجەك",frequency:"چاستوتا",
+      force:"كۈچ",acceleration:"تېزلىنىش",density:"زىچلىق",
+      flow:"ئېقىم",fuel:"يېقىلغۇ",illuminance:"يورۇقلۇق",
+      electric:"ئېلېكتر",torque:"بۇراش",radioactivity:"رادىئو ئاكتىپلىق"}},
+
+  ar:{name:"العربية",flag:"🇸🇦",dir:"rtl",
+    title:"محوّل الوحدات الشامل",
+    sub:"22 فئة · أكثر من 300 وحدة · تحويل تلقائي",
+    ph:"ابحث عن وحدة... (مثال: متر، kg، celsius)",
+    from:"من",to:"إلى",copy:"نسخ",copied:"تم النسخ",
+    qTitle:"نتائج سريعة",tTitle:"جدول تفصيلي",
+    thU:"الوحدة",thS:"الرمز",thV:"القيمة",
+    mEmp:"أدخل رقمًا أو تعبيرًا (مثال: 2*3+1)",
+    mOk:"✓ تعبير صحيح — حُسب تلقائيًا",
+    mEr:"✗ تعبير خاطئ! استخدم الأرقام و + − × ÷ ( ) . فقط",
+    mNeg:"⚠ القيمة السالبة غير منطقية هنا",
+    rel:"العلاقة الأساسية",fac:"معامل التحويل",cal:"الحساب",
+    set:"الإعدادات",
+    sTh:"المظهر",sThH:"فاتح / داكن / تلقائي",
+    sDec:"المنازل العشرية",sDecH:"دقة النتيجة",
+    sSci:"الترميز العلمي",sSciH:"للأرقام الكبيرة والصغيرة",
+    sTh2:"فاصل الآلاف",sTh2H:"بصيغة 1,234,567.89",
+    hist:"سجل التحويلات",histEmp:"لا يوجد سجل",clr:"تم مسح السجل",
+    favA:"★ تم الحفظ",favR:"☆ تم الحذف",sEmp:"لا نتائج",
+    cats:{length:"الطول",mass:"الكتلة",temperature:"الحرارة",
+      area:"المساحة",volume:"الحجم",time:"الوقت",speed:"السرعة",
+      data:"البيانات",pressure:"الضغط",energy:"الطاقة",
+      power:"القدرة",angle:"الزاوية",frequency:"التردد",
+      force:"القوة",acceleration:"التسارع",density:"الكثافة",
+      flow:"التدفق",fuel:"الوقود",illuminance:"الإضاءة",
+      electric:"الكهرباء",torque:"العزم",radioactivity:"الإشعاع"}},
+
+  tr:{name:"Türkçe",flag:"🇹🇷",dir:"ltr",
+    title:"Kapsamlı Birim Dönüştürücü",
+    sub:"22 kategori · 300+ birim · Otomatik dönüşüm",
+    ph:"Birim ara... (örn: metre, kg, celsius)",
+    from:"Kaynak",to:"Hedef",copy:"Kopyala",copied:"Kopyalandı",
+    qTitle:"Hızlı Sonuçlar",tTitle:"Detaylı Tablo",
+    thU:"Birim",thS:"Sembol",thV:"Değer",
+    mEmp:"Bir sayı veya ifade girin (örn: 2*3+1)",
+    mOk:"✓ Geçerli ifade — otomatik hesaplandı",
+    mEr:"✗ Geçersiz! Sadece + − × ÷ ( ) . ve sayılar",
+    mNeg:"⚠ Negatif değer bu kategoride anlamsız",
+    rel:"Temel ilişki",fac:"Dönüşüm katsayısı",cal:"Hesaplama",
+    set:"Ayarlar",
+    sTh:"Tema",sThH:"Açık / Koyu / Otomatik",
+    sDec:"Ondalık basamak",sDecH:"Sonuç hassasiyeti",
+    sSci:"Bilimsel gösterim",sSciH:"Büyük/küçük sayılar için",
+    sTh2:"Binlik ayırıcı",sTh2H:"1.234.567,89 biçiminde",
+    hist:"Dönüşüm Geçmişi",histEmp:"Geçmiş yok",clr:"Geçmiş temizlendi",
+    favA:"★ Kaydedildi",favR:"☆ Kaldırıldı",sEmp:"Sonuç yok",
+    cats:{length:"Uzunluk",mass:"Kütle",temperature:"Sıcaklık",
+      area:"Alan",volume:"Hacim",time:"Zaman",speed:"Hız",
+      data:"Veri",pressure:"Basınç",energy:"Enerji",
+      power:"Güç",angle:"Açı",frequency:"Frekans",
+      force:"Kuvvet",acceleration:"İvme",density:"Yoğunluk",
+      flow:"Debi",fuel:"Yakıt",illuminance:"Aydınlanma",
+      electric:"Elektrik",torque:"Tork",radioactivity:"Radyoaktivite"}},
+
+  en:{name:"English",flag:"🇬🇧",dir:"ltr",
+    title:"Comprehensive Unit Converter",
+    sub:"22 categories · 300+ units · Automatic conversion",
+    ph:"Search units... (e.g. meter, kg, celsius)",
+    from:"From",to:"To",copy:"Copy",copied:"Copied",
+    qTitle:"Quick Results",tTitle:"Detailed Table",
+    thU:"Unit",thS:"Symbol",thV:"Value",
+    mEmp:"Enter a number or expression (e.g. 2*3+1)",
+    mOk:"✓ Valid expression — calculated automatically",
+    mEr:"✗ Invalid! Use only + − × ÷ ( ) . and numbers",
+    mNeg:"⚠ Negative value is meaningless here",
+    rel:"Base relation",fac:"Conversion factor",cal:"Calculation",
+    set:"Settings",
+    sTh:"Theme",sThH:"Light / Dark / Auto",
+    sDec:"Decimal places",sDecH:"Result precision",
+    sSci:"Scientific notation",sSciH:"For very large/small numbers",
+    sTh2:"Thousands separator",sTh2H:"In 1,234,567.89 format",
+    hist:"Conversion History",histEmp:"No history yet",clr:"History cleared",
+    favA:"★ Saved",favR:"☆ Removed",sEmp:"No results",
+    cats:{length:"Length",mass:"Mass",temperature:"Temperature",
+      area:"Area",volume:"Volume",time:"Time",speed:"Speed",
+      data:"Data",pressure:"Pressure",energy:"Energy",
+      power:"Power",angle:"Angle",frequency:"Frequency",
+      force:"Force",acceleration:"Acceleration",density:"Density",
+      flow:"Flow",fuel:"Fuel",illuminance:"Illuminance",
+      electric:"Electric",torque:"Torque",radioactivity:"Radioactivity"}}
+};
+
+/* ═══════════════════════════════════════════════════════════
+   ② UNITS
+   ═══════════════════════════════════════════════════════════ */
+function U(id, sym, factor, ug, ar, tr, en){
+  return {id, sym, factor, names:{ug, ar, tr, en}};
+}
+
+const UNITS = {
+  length:{icon:"📏",list:[
+    U("nm","nm",1e-9,"نانومېتر","نانومتر","nanometre","nanometer"),
+    U("µm","µm",1e-6,"مىكرومېتر","ميكرومتر","mikrometre","micrometer"),
+    U("mm","mm",0.001,"مىللىمېتر","مليمتر","milimetre","millimeter"),
+    U("cm","cm",0.01,"سانتىمېتر","سنتيمتر","santimetre","centimeter"),
+    U("dm","dm",0.1,"دېتسىمېتر","ديسيمتر","desimetre","decimeter"),
+    U("m","m",1,"مېتر","متر","metre","meter"),
+    U("dam","dam",10,"دېكامېتر","ديكامتر","dekametre","decameter"),
+    U("hm","hm",100,"ھېكتومېتر","هكتومتر","hektometre","hectometer"),
+    U("km","km",1000,"كىلومېتر","كيلومتر","kilometre","kilometer"),
+    U("in","in",0.0254,"دۇيم","بوصة","inç","inch"),
+    U("ft","ft",0.3048,"فۇت","قدم","fit","foot"),
+    U("yd","yd",0.9144,"يارد","ياردة","yarda","yard"),
+    U("mi","mi",1609.344,"مىل","ميل","mil","mile"),
+    U("nmi","nmi",1852,"دېڭىز مىلى","ميل بحري","deniz mili","nautical mile"),
+    U("ly","ly",9.4607304725808e15,"يورۇقلۇق يىلى","سنة ضوئية","ışık yılı","light-year"),
+    U("AU","AU",1.495978707e11,"ئاسترونومىيە بىرلىكى","وحدة فلكية","astronomik birim","astronomical unit"),
+    U("pc","pc",3.0856775814914e16,"پارسېك","فرسخ فلكي","parsek","parsec")
+  ]},
+  mass:{icon:"⚖️",list:[
+    U("µg","µg",1e-9,"مىكروگرام","ميكروغرام","mikrogram","microgram"),
+    U("mg","mg",1e-6,"مىللىگىرام","ميليغرام","miligram","milligram"),
+    U("g","g",0.001,"گىرام","غرام","gram","gram"),
+    U("dag","dag",0.01,"دېكاگىرام","ديكاغرام","dekagram","decagram"),
+    U("hg","hg",0.1,"ھېكتوگىرام","هكتوغرام","hektogram","hectogram"),
+    U("kg","kg",1,"كىلوگرام","كيلوغرام","kilogram","kilogram"),
+    U("t","t",1000,"توننا","طن","ton","tonne"),
+    U("oz","oz",0.028349523125,"ئۇنسىيە","أونصة","ons","ounce"),
+    U("lb","lb",0.45359237,"پاوند","رطل","pound","pound"),
+    U("st","st",6.35029318,"ستون","ستون","stone","stone"),
+    U("ct","ct",0.0002,"كارات","قيراط","karat","carat"),
+    U("gr","gr",0.00006479891,"گىرەن","حبة","grain","grain"),
+    U("slug","slug",14.59390294,"سلاگ","سلَغ","slug","slug"),
+    U("u","u",1.66053906660e-27,"ئاتوم بىرلىكى","وحدة ذرية","atomik birim","atomic mass unit")
+  ]},
+  temperature:{icon:"🌡️",special:"temp",list:[
+    U("C","°C",0,"سېلسىيە","مئوية","Celsius","Celsius"),
+    U("F","°F",0,"فاھرېنھېيت","فهرنهايت","Fahrenheit","Fahrenheit"),
+    U("K","K",0,"كېلۋىن","كلفن","Kelvin","Kelvin"),
+    U("R","°R",0,"رانكىن","رانكين","Rankine","Rankine")
+  ]},
+  area:{icon:"🗺️",list:[
+    U("mm2","mm²",1e-6,"كۋادرات مىللىمېتر","مليمتر مربع","milimetrekare","mm²"),
+    U("cm2","cm²",1e-4,"كۋادرات سانتىمېتر","سنتيمتر مربع","santimetrekare","cm²"),
+    U("m2","m²",1,"كۋادرات مېتر","متر مربع","metrekare","m²"),
+    U("ha","ha",10000,"گېكتار","هكتار","hektar","hectare"),
+    U("km2","km²",1e6,"كۋادرات كىلومېتر","كيلومتر مربع","kilometrekare","km²"),
+    U("in2","in²",0.00064516,"كۋادرات دۇيم","بوصة مربعة","inçkare","in²"),
+    U("ft2","ft²",0.09290304,"كۋادرات فۇت","قدم مربع","fitkare","ft²"),
+    U("yd2","yd²",0.83612736,"كۋادرات يارد","ياردة مربعة","yardakare","yd²"),
+    U("acre","ac",4046.8564224,"ئاكىر","فدان","dönüm","acre"),
+    U("mi2","mi²",2589988.110336,"كۋادرات مىل","ميل مربع","mil kare","mi²")
+  ]},
+  volume:{icon:"🧪",list:[
+    U("mL","mL",1e-6,"مىللىلىتر","مليلتر","mililitre","milliliter"),
+    U("cL","cL",1e-5,"سانتىلىتر","سنتيلتر","santilitre","centiliter"),
+    U("dL","dL",1e-4,"دېتسىلىتر","ديسيلتر","desilitre","deciliter"),
+    U("L","L",0.001,"لىتر","لتر","litre","liter"),
+    U("m3","m³",1,"كۇب مېتر","متر مكعب","metreküp","cubic meter"),
+    U("cm3","cm³",1e-6,"كۇب سانتىمېتر","سنتيمتر مكعب","santimetreküp","cm³"),
+    U("in3","in³",1.6387064e-5,"كۇب دۇيم","بوصة مكعبة","inçküp","in³"),
+    U("ft3","ft³",0.028316846592,"كۇب فۇت","قدم مكعب","fitküp","ft³"),
+    U("floz","fl oz",2.95735295625e-5,"سۇيۇقلۇق ئۇنسىيە","أونصة سائلة","sıvı ons","fl oz"),
+    U("cup","cup",2.365882365e-4,"چىنە","كوب","bardak","cup"),
+    U("pt","pt",4.73176473e-4,"پىنت","باينت","pint","pint"),
+    U("qt","qt",9.46352946e-4,"كوارت","كوارت","quart","quart"),
+    U("gal","gal",0.003785411784,"گالون","غالون","galon","gallon"),
+    U("bbl","bbl",0.158987294928,"بېرېل","برميل","varil","barrel"),
+    U("tsp","tsp",4.92892159375e-6,"قوشۇقچە","ملعقة صغيرة","çay kaşığı","tsp"),
+    U("tbsp","tbsp",1.478676478125e-5,"قوشۇق","ملعقة كبيرة","yemek kaşığı","tbsp")
+  ]},
+  time:{icon:"⏱️",list:[
+    U("ns","ns",1e-9,"نانوسېكۇنت","نانوثانية","nanosaniye","nanosecond"),
+    U("µs","µs",1e-6,"مىكروسېكۇنت","ميكروثانية","mikrosaniye","microsecond"),
+    U("ms","ms",0.001,"مىللىسېكۇنت","ميلي ثانية","milisaniye","millisecond"),
+    U("s","s",1,"سېكۇنت","ثانية","saniye","second"),
+    U("min","min",60,"مىنۇت","دقيقة","dakika","minute"),
+    U("h","h",3600,"سائەت","ساعة","saat","hour"),
+    U("day","d",86400,"كۈن","يوم","gün","day"),
+    U("week","wk",604800,"ھەپتە","أسبوع","hafta","week"),
+    U("month","mo",2629800,"ئاي","شهر","ay","month"),
+    U("year","yr",31557600,"يىل","سنة","yıl","year"),
+    U("decade","dec",315576000,"ئون يىل","عقد","on yıl","decade"),
+    U("century","c",3155760000,"ئەسىر","قرن","yüzyıl","century")
+  ]},
+  speed:{icon:"🚀",list:[
+    U("mps","m/s",1,"مېتر/سېكۇنت","متر/ثانية","metre/saniye","m/s"),
+    U("kmh","km/h",0.277777777778,"كىلومېتر/سائەت","كم/ساعة","km/saat","km/h"),
+    U("mph","mph",0.44704,"مىل/سائەت","ميل/ساعة","mil/saat","mph"),
+    U("fps","ft/s",0.3048,"فۇت/سېكۇنت","قدم/ثانية","fit/saniye","ft/s"),
+    U("knot","kn",0.514444444444,"تۈگۈن","عقدة","knot","knot"),
+    U("mach","Ma",343,"ماخ","ماخ","mach","mach")
+  ]},
+  data:{icon:"💾",list:[
+    U("bit","bit",0.125,"بىت","بت","bit","bit"),
+    U("B","B",1,"بايت","بايت","bayt","byte"),
+    U("KB","KB",1024,"كىلوبايت","كيلوبايت","kilobayt","kilobyte"),
+    U("MB","MB",1048576,"مېگابايت","ميغابايت","megabayt","megabyte"),
+    U("GB","GB",1073741824,"گىگابايت","غيغابايت","gigabayt","gigabyte"),
+    U("TB","TB",1099511627776,"تېرابايت","تيرابايت","terabayt","terabyte"),
+    U("PB","PB",1125899906842624,"پېتابايت","بيتابايت","petabayt","petabyte"),
+    U("KiB","KiB",1024,"كىبىبايت","كيبي بايت","kibibayt","kibibyte"),
+    U("MiB","MiB",1048576,"مېبىبايت","ميبي بايت","mebibayt","mebibyte"),
+    U("GiB","GiB",1073741824,"گىبىبايت","جيبي بايت","gibibayt","gibibyte")
+  ]},
+  pressure:{icon:"🌬️",list:[
+    U("Pa","Pa",1,"پاسكال","باسكال","pascal","pascal"),
+    U("hPa","hPa",100,"ھېكتوپاسكال","هكتوباسكال","hektopaskal","hectopascal"),
+    U("kPa","kPa",1000,"كىلوپاسكال","كيلوباسكال","kilopaskal","kilopascal"),
+    U("MPa","MPa",1e6,"مېگاپاسكال","ميغاباسكال","megapaskal","megapascal"),
+    U("bar","bar",100000,"بار","بار","bar","bar"),
+    U("mbar","mbar",100,"مىللىبار","ميلي بار","milibar","millibar"),
+    U("atm","atm",101325,"ئاتموسفېرا","ضغط جوي","atmosfer","atmosphere"),
+    U("psi","psi",6894.757293168,"پىسى","رطل/بوصة²","psi","psi"),
+    U("mmHg","mmHg",133.322387415,"سىماب مىللىمېترى","ملم زئبق","mmHg","mmHg"),
+    U("torr","Torr",133.322368421,"تور","تور","torr","torr")
+  ]},
+  energy:{icon:"⚡",list:[
+    U("J","J",1,"جول","جول","joule","joule"),
+    U("kJ","kJ",1000,"كىلوجول","كيلوجول","kilojoule","kilojoule"),
+    U("cal","cal",4.184,"كالورى","كالوري","kalori","calorie"),
+    U("kcal","kcal",4184,"كىلوكالورى","كيلوكالوري","kilokalori","kilocalorie"),
+    U("Wh","Wh",3600,"ۋات سائەت","واط ساعة","watt saat","watt-hour"),
+    U("kWh","kWh",3600000,"كىلوۋات سائەت","كيلوواط ساعة","kilowatt saat","kWh"),
+    U("eV","eV",1.602176634e-19,"ئېلېكترونۋولت","إلكترون فولت","elektronvolt","electronvolt"),
+    U("BTU","BTU",1055.05585262,"بىتىيۇ","وحدة حرارية","BTU","BTU"),
+    U("ftlb","ft·lb",1.3558179483314,"فۇت پاوند","قدم-رطل","fit-pound","ft·lb")
+  ]},
+  power:{icon:"🔌",list:[
+    U("mW","mW",0.001,"مىللىۋات","ملي واط","miliwatt","milliwatt"),
+    U("W","W",1,"ۋات","واط","watt","watt"),
+    U("kW","kW",1000,"كىلوۋات","كيلوواط","kilowatt","kilowatt"),
+    U("MW","MW",1e6,"مېگاۋات","ميغاواط","megawatt","megawatt"),
+    U("GW","GW",1e9,"گىگاۋات","غيغاواط","gigawatt","gigawatt"),
+    U("hp","hp",745.699871582,"ئات كۈچى","حصان","beygir gücü","horsepower"),
+    U("hpM","hp(M)",735.49875,"مېترىك ئات كۈچى","حصان متري","metrik beygir","metric hp")
+  ]},
+  angle:{icon:"📐",list:[
+    U("deg","°",1,"گىرادۇس","درجة","derece","degree"),
+    U("rad","rad",57.2957795130823,"رادىئان","راديان","radyan","radian"),
+    U("mrad","mrad",0.0572957795130823,"مىللىرادىئان","ملي راديان","miliradyan","mrad"),
+    U("grad","grad",0.9,"گراد","غراد","grad","gradian"),
+    U("turn","turn",360,"ئايلىنىش","دورة","tur","turn"),
+    U("arcmin","′",1/60,"مىنۇت بۇرجەك","دقيقة قوسية","yay dakikası","arcmin"),
+    U("arcsec","″",1/3600,"سېكۇنت بۇرجەك","ثانية قوسية","yay saniyesi","arcsec")
+  ]},
+  frequency:{icon:"📻",list:[
+    U("Hz","Hz",1,"ھېرتز","هرتز","hertz","hertz"),
+    U("kHz","kHz",1000,"كىلوھېرتز","كيلوهرتز","kilohertz","kilohertz"),
+    U("MHz","MHz",1e6,"مېگاھېرتز","ميغاهرتز","megahertz","megahertz"),
+    U("GHz","GHz",1e9,"گىگاھېرتز","غيغاهرتز","gigahertz","gigahertz"),
+    U("THz","THz",1e12,"تېراھېرتز","تيراهرتز","terahertz","terahertz"),
+    U("rpm","rpm",1/60,"ئايلىنىش/مىنۇت","دورة/دقيقة","devir/dakika","rpm")
+  ]},
+  force:{icon:"💪",list:[
+    U("N","N",1,"نيۇتون","نيوتن","newton","newton"),
+    U("kN","kN",1000,"كىلونيۇتون","كيلونيوتن","kilonewton","kilonewton"),
+    U("MN","MN",1e6,"مېگانىيۇتون","ميغانيوتن","meganewton","meganewton"),
+    U("dyn","dyn",1e-5,"دىن","داين","din","dyne"),
+    U("lbf","lbf",4.4482216152605,"پاوند كۈچى","رطل-قوة","pound-kuvvet","lbf"),
+    U("kgf","kgf",9.80665,"كىلوگرام كۈچى","كيلوغرام-قوة","kilogram-kuvvet","kgf"),
+    U("gf","gf",0.00980665,"گىرام كۈچى","غرام-قوة","gram-kuvvet","gf")
+  ]},
+  acceleration:{icon:"🏎️",list:[
+    U("mps2","m/s²",1,"مېتر/سېكۇنت²","متر/ثانية²","metre/saniye²","m/s²"),
+    U("g","g",9.80665,"ئېغىرلىق تېزلىنىشى","تسارع الجاذبية","yerçekimi","g"),
+    U("ftps2","ft/s²",0.3048,"فۇت/سېكۇنت²","قدم/ثانية²","fit/saniye²","ft/s²"),
+    U("inps2","in/s²",0.0254,"دۇيم/سېكۇنت²","بوصة/ثانية²","inç/saniye²","in/s²")
+  ]},
+  density:{icon:"🧊",list:[
+    U("kgm3","kg/m³",1,"كىلوگرام/مېتر³","كغ/م³","kg/m³","kg/m³"),
+    U("gcm3","g/cm³",1000,"گىرام/سانتىمېتر³","غ/سم³","g/cm³","g/cm³"),
+    U("gmL","g/mL",1000,"گىرام/مىللىلىتر","غ/مل","g/mL","g/mL"),
+    U("kgL","kg/L",1000,"كىلوگرام/لىتر","كغ/ل","kg/L","kg/L"),
+    U("gl","g/L",1,"گىرام/لىتر","غ/ل","g/L","g/L"),
+    U("lbft3","lb/ft³",16.01846337,"پاوند/فۇت³","رطل/قدم³","lb/ft³","lb/ft³"),
+    U("lbin3","lb/in³",27679.9047102,"پاوند/دۇيم³","رطل/بوصة³","lb/in³","lb/in³")
+  ]},
+  flow:{icon:"💧",list:[
+    U("m3s","m³/s",1,"مېتر³/سېكۇنت","م³/ث","m³/s","m³/s"),
+    U("m3h","m³/h",0.000277777778,"مېتر³/سائەت","م³/س","m³/h","m³/h"),
+    U("Ls","L/s",0.001,"لىتر/سېكۇنت","ل/ث","L/s","L/s"),
+    U("Lmin","L/min",1.66666667e-5,"لىتر/مىنۇت","ل/د","L/min","L/min"),
+    U("ft3s","ft³/s",0.028316846592,"فۇت³/سېكۇنت","قدم³/ث","ft³/s","ft³/s"),
+    U("gpm","gal/min",6.30901964e-5,"گالون/مىنۇت","غالون/د","gal/dk","gpm"),
+    U("gph","gal/h",1.05150327e-6,"گالون/سائەت","غالون/س","gal/sa","gph")
+  ]},
+  fuel:{icon:"⛽",list:[
+    U("kmL","km/L",1,"كىلومېتر/لىتر","كم/ل","km/L","km/L"),
+    U("L100","L/100km",0.01,"لىتر/100كم","ل/100كم","L/100km","L/100km"),
+    U("mpgUS","mpg US",0.425143707,"مىل/گالون (US)","ميل/غالون أمريكي","mil/galon US","mpg US"),
+    U("mpgUK","mpg UK",0.354006,"مىل/گالون (UK)","ميل/غالون بريطاني","mil/galon UK","mpg UK")
+  ]},
+  illuminance:{icon:"💡",list:[
+    U("lx","lx",1,"لۇكس","لوكس","lüks","lux"),
+    U("fc","fc",10.763910417,"فۇت-شام","قدم-شمعة","foot-candle","fc"),
+    U("phot","ph",10000,"فوت","فوت","fot","phot"),
+    U("nox","nox",0.001,"نوكس","نوكس","noks","nox"),
+    U("cdm2","cd/m²",1,"كاندېلا/مېتر²","شمعة/م²","cd/m²","cd/m²")
+  ]},
+  electric:{icon:"⚡",list:[
+    U("A","A",1,"ئامپېر","أمبير","amper","ampere"),
+    U("mA","mA",0.001,"مىللىئامپېر","ميلي أمبير","miliamper","mA"),
+    U("µA","µA",1e-6,"مىكروئامپېر","ميكرو أمبير","mikroamper","µA"),
+    U("V","V",1,"ۋولت","فولت","volt","volt"),
+    U("mV","mV",0.001,"مىللىۋولت","ميلي فولت","milivolt","mV"),
+    U("kV","kV",1000,"كىلوۋولت","كيلو فولت","kilovolt","kV"),
+    U("Ω","Ω",1,"ئوم","أوم","ohm","ohm"),
+    U("kΩ","kΩ",1000,"كىلوئوم","كيلو أوم","kiloohm","kΩ"),
+    U("MΩ","MΩ",1e6,"مېگائوم","ميغا أوم","megaohm","MΩ"),
+    U("F","F",1,"فاراد","فاراد","farad","farad"),
+    U("µF","µF",1e-6,"مىكروفاراد","ميكرو فاراد","mikrofarad","µF"),
+    U("nF","nF",1e-9,"نانوفاراد","نانو فاراد","nanofarad","nF"),
+    U("pF","pF",1e-12,"پىكوفاراد","بيكو فاراد","pikofarad","pF"),
+    U("C","C",1,"كۇلون","كولوم","coulomb","coulomb"),
+    U("H","H",1,"ھېنرى","هنري","henry","henry"),
+    U("mH","mH",0.001,"مىللىھېنرى","ميلي هنري","milihenry","mH"),
+    U("W","W",1,"ۋات","واط","watt","watt"),
+    U("kW","kW",1000,"كىلوۋات","كيلوواط","kilowatt","kW")
+  ]},
+  torque:{icon:"🔧",list:[
+    U("Nm","N·m",1,"نيۇتون-مېتر","نيوتن-متر","N·m","N·m"),
+    U("kNm","kN·m",1000,"كىلونيۇتون-مېتر","كيلونيوتن-متر","kN·m","kN·m"),
+    U("lbfFt","lbf·ft",1.3558179483314,"پاوند-فۇت","رطل-قدم","lbf·ft","lbf·ft"),
+    U("lbfIn","lbf·in",0.112984829028,"پاوند-دۇيم","رطل-بوصة","lbf·in","lbf·in"),
+    U("kgfM","kgf·m",9.80665,"كىلوگرام-مېتر","كغ-متر","kgf·m","kgf·m")
+  ]},
+  radioactivity:{icon:"☢️",list:[
+    U("Bq","Bq",1,"بېكېرېل","بيكريل","bekerel","becquerel"),
+    U("kBq","kBq",1000,"كىلوبېكېرېل","كيلو بيكريل","kilobekerel","kBq"),
+    U("MBq","MBq",1e6,"مېگابېكېرېل","ميغا بيكريل","megabekerel","MBq"),
+    U("GBq","GBq",1e9,"گىگابېكېرېل","غيغا بيكريل","gigabekerel","GBq"),
+    U("Ci","Ci",3.7e10,"كۇرى","كوري","curie","curie"),
+    U("mCi","mCi",3.7e7,"مىللىكۇرى","ميلي كوري","milicurie","mCi"),
+    U("µCi","µCi",3.7e4,"مىكروكۇرى","ميكرو كوري","mikrocurie","µCi"),
+    U("Gy","Gy",1,"گېراي","غراي","gray","gray"),
+    U("Sv","Sv",1,"سىۋېرت","سيفرت","sievert","sievert"),
+    U("rem","rem",0.01,"رېم","ريم","rem","rem")
+  ]}
+};
+
+const TEMP_FORMULA = {
+  "C>F":"°F = °C × 9/5 + 32","C>K":"K = °C + 273.15","C>R":"°R = (°C + 273.15) × 9/5",
+  "F>C":"°C = (°F − 32) × 5/9","F>K":"K = (°F − 32) × 5/9 + 273.15","F>R":"°R = °F + 459.67",
+  "K>C":"°C = K − 273.15","K>F":"°F = (K − 273.15) × 9/5 + 32","K>R":"°R = K × 9/5",
+  "R>C":"°C = (°R − 491.67) × 5/9","R>F":"°F = °R − 459.67","R>K":"K = °R × 5/9"
+};
+
+/* ═══════════════════════════════════════════════════════════
+   ③ UTILITIES
+   ═══════════════════════════════════════════════════════════ */
+const $ = id => document.getElementById(id);
+const T = () => I18N[S.lang];
+
+const Parser = {
+  eval(raw){
+    if(raw == null || String(raw).trim() === "") return {ok:false, code:"emp"};
+    let s = String(raw).trim();
+    s = s.replace(/[٠-٩]/g, d => "٠١٢٣٤٥٦٧٨٩".indexOf(d));
+    s = s.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d));
+    s = s.replace(/[٬,\s_]/g, "").replace("٫", ".");
+    s = s.replace(/[×✕]/g, "*").replace(/÷/g, "/").replace(/[−–—]/g, "-");
+    if(!/^[0-9+\-*/().eE]+$/.test(s)) return {ok:false, code:"er"};
+    try{
+      const r = Function('"use strict"; return (' + s + ');')();
+      if(typeof r !== "number" || !isFinite(r)) return {ok:false, code:"er"};
+      return {ok:true, value:r};
+    }catch(e){ return {ok:false, code:"er"}; }
+  }
+};
+
+const Fmt = {
+  num(n){
+    if(!isFinite(n)) return "—";
+    if(n === 0) return "0";
+    const a = Math.abs(n);
+    if(S.sci && (a >= 1e15 || (a < 1e-4 && a > 0)))
+      return n.toExponential(6).replace("e", "×10^");
+    let out;
+    if(S.dec === "auto"){
+      if(a >= 1e15 || (a < 1e-9 && a > 0))
+        return n.toExponential(6).replace("e", "×10^");
+      out = parseFloat(n.toPrecision(12));
+    }else{
+      out = parseFloat(n.toFixed(parseInt(S.dec, 10)));
+    }
+    let str = out.toString();
+    if(str.includes("e")) return n.toExponential(6).replace("e", "×10^");
+    if(S.th){
+      const neg = str.startsWith("-");
+      const body = neg ? str.slice(1) : str;
+      const parts = body.split(".");
+      const grouped = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      str = (neg ? "-" : "") + grouped + (parts[1] ? "." + parts[1] : "");
+    }
+    return str;
+  }
+};
+
+const Conv = {
+  list(cat){ return UNITS[cat].list; },
+  find(cat, id){ return UNITS[cat].list.find(u => u.id === id) || null; },
+  toC(v, u){
+    if(u === "C") return v;
+    if(u === "F") return (v - 32) * 5 / 9;
+    if(u === "K") return v - 273.15;
+    if(u === "R") return (v - 491.67) * 5 / 9;
+    return v;
+  },
+  fromC(v, u){
+    if(u === "C") return v;
+    if(u === "F") return v * 9 / 5 + 32;
+    if(u === "K") return v + 273.15;
+    if(u === "R") return (v + 273.15) * 9 / 5;
+    return v;
+  },
+  convert(v, cat, from, to){
+    if(UNITS[cat].special === "temp")
+      return this.fromC(this.toC(v, from), to);
+    const f = this.find(cat, from);
+    const t = this.find(cat, to);
+    if(!f || !t) return NaN;
+    return v * f.factor / t.factor;
+  }
+};
+
+const Toast = (() => {
+  let timer = null;
+  return {
+    show(msg){
+      const el = $("toast");
+      el.textContent = msg;
+      el.classList.add("on");
+      clearTimeout(timer);
+      timer = setTimeout(() => el.classList.remove("on"), 1800);
+    }
+  };
+})();
+
+const Modal = {
+  open(id){ $(id).classList.add("on"); },
+  close(id){ $(id).classList.remove("on"); },
+  closeAll(){ document.querySelectorAll(".modal.on").forEach(m => m.classList.remove("on")); }
+};
+
+const Theme = {
+  apply(){
+    const pref = S.theme;
+    let actual = pref;
+    if(pref === "auto")
+      actual = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", actual);
+    $("themeBtn").textContent = actual === "dark" ? "☀" : "🌙";
+    document.querySelectorAll("#segTheme button").forEach(b =>
+      b.classList.toggle("on", b.dataset.v === pref));
+  }
+};
+
+/* ═══════════════════════════════════════════════════════════
+   ④ STATE
+   ═══════════════════════════════════════════════════════════ */
+const KEY = "uuc_color_v1";
+const DEFAULT = {
+  lang:"ug", cat:"length", from:"m", to:"cm", value:"1",
+  theme:"light", dec:"auto", sci:false, th:true,
+  favs:{}, hist:[]
+};
+let S = JSON.parse(JSON.stringify(DEFAULT));
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    if(!raw) return;
+    const obj = JSON.parse(raw);
+    if(!obj || typeof obj !== "object") return;
+    Object.keys(DEFAULT).forEach(k => { if(obj[k] !== undefined) S[k] = obj[k]; });
+    if(!I18N[S.lang]) S.lang = "ug";
+    if(!UNITS[S.cat]) S.cat = "length";
+    if(!Array.isArray(S.hist)) S.hist = [];
+    if(!S.favs || typeof S.favs !== "object") S.favs = {};
+  }catch(e){}
+}
+function saveState(){
+  try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ⑤ RENDER
+   ═══════════════════════════════════════════════════════════ */
+const R = {
+  all(){
+    document.documentElement.setAttribute("data-cat", S.cat);
+    this.static();
+    this.langs();
+    this.cats();
+    this.selOpts();
+    $("fromInput").value = S.value;
+    this.update();
+  },
+
+  static(){
+    const t = T();
+    $("appTitle").textContent = t.title;
+    $("appSub").textContent = t.sub;
+    $("searchInput").placeholder = t.ph;
+    $("lblFrom").textContent = t.from;
+    $("lblTo").textContent = t.to;
+    $("copyBtn").textContent = t.copy;
+    $("quickTitle").textContent = t.qTitle;
+    $("tableTitle").textContent = t.tTitle;
+    $("th1").textContent = t.thU;
+    $("th2").textContent = t.thS;
+    $("th3").textContent = t.thV;
+    $("settingsTitle").textContent = "⚙ " + t.set;
+    $("lblTheme").textContent = t.sTh;
+    $("hintTheme").textContent = t.sThH;
+    $("lblDec").textContent = t.sDec;
+    $("hintDec").textContent = t.sDecH;
+    $("lblSci").textContent = t.sSci;
+    $("hintSci").textContent = t.sSciH;
+    $("lblTh").textContent = t.sTh2;
+    $("hintTh").textContent = t.sTh2H;
+    $("historyTitle").textContent = "🕐 " + t.hist;
+    document.documentElement.lang = S.lang;
+    document.documentElement.dir = t.dir;
+    document.title = t.title;
+  },
+
+  langs(){
+    $("langTabs").innerHTML = Object.keys(I18N).map(k =>
+      `<button class="tab${k === S.lang ? " on" : ""}" data-lang="${k}">
+        <span class="ti">${I18N[k].flag}</span>${I18N[k].name}
+      </button>`
+    ).join("");
+  },
+
+  cats(){
+    const t = T();
+    $("catTabs").innerHTML = Object.keys(UNITS).map(k =>
+      `<button class="tab${k === S.cat ? " on" : ""}" data-cat="${k}">
+        <span class="ti">${UNITS[k].icon}</span>${t.cats[k]}
+      </button>`
+    ).join("");
+  },
+
+  selOpts(){
+    const lang = S.lang;
+    $("fromSel").innerHTML = Conv.list(S.cat).map(u =>
+      `<option value="${u.id}"${u.id === S.from ? " selected" : ""}>${u.names[lang]} (${u.sym})</option>`
+    ).join("");
+    $("toSel").innerHTML = Conv.list(S.cat).map(u =>
+      `<option value="${u.id}"${u.id === S.to ? " selected" : ""}>${u.names[lang]} (${u.sym})</option>`
+    ).join("");
+  },
+
+  update(){
+    const t = T();
+    const input = $("fromInput");
+    const st = $("status");
+    const p = Parser.eval(S.value);
+
+    if(!p.ok && p.code === "emp"){
+      input.classList.remove("ok", "er");
+      st.className = "status emp";
+      st.textContent = t.mEmp;
+      $("toInput").value = "";
+      $("resultV").textContent = "—";
+      this.explain(null);
+      this.quick(null);
+      this.table(null);
+      return;
+    }
+
+    if(!p.ok){
+      input.classList.remove("ok");
+      input.classList.add("er");
+      st.className = "status er";
+      st.textContent = t.mEr;
+      $("toInput").value = "";
+      $("resultV").textContent = "—";
+      this.explain(null);
+      this.quick(null);
+      this.table(null);
+      return;
+    }
+
+    const n = p.value;
+
+    if(n < 0 && UNITS[S.cat].special !== "temp"){
+      input.classList.remove("ok");
+      input.classList.add("er");
+      st.className = "status wr";
+      st.textContent = t.mNeg;
+    }else{
+      input.classList.remove("er");
+      input.classList.add("ok");
+      st.className = "status ok";
+      st.textContent = t.mOk;
+    }
+
+    const res = Conv.convert(n, S.cat, S.from, S.to);
+    const toU = Conv.find(S.cat, S.to);
+    const fmt = Fmt.num(res);
+    $("toInput").value = fmt;
+    $("resultV").textContent = fmt + (toU ? " " + toU.sym : "");
+
+    this.explain(n);
+    this.quick(n);
+    this.table(n);
+    this.scheduleHist(fmt);
+  },
+
+  explain(n){
+    const t = T();
+    if(n === null){
+      $("ex1").textContent = "—";
+      $("ex2").textContent = "—";
+      $("ex3").textContent = "—";
+      return;
+    }
+    const fU = Conv.find(S.cat, S.from);
+    const tU = Conv.find(S.cat, S.to);
+    const res = Conv.convert(n, S.cat, S.from, S.to);
+
+    if(UNITS[S.cat].special === "temp"){
+      const f = TEMP_FORMULA[S.from + ">" + S.to] || "";
+      $("ex1").innerHTML = `<b>${t.rel}:</b> ${f}`;
+      $("ex2").textContent = `${Fmt.num(n)} ${fU.sym} = ${Fmt.num(res)} ${tU.sym}`;
+      $("ex3").textContent = "";
+      return;
+    }
+    const ratio = Conv.convert(1, S.cat, S.from, S.to);
+    $("ex1").innerHTML = `<b>${t.rel}:</b> 1 ${fU.names[S.lang]} = ${Fmt.num(ratio)} ${tU.names[S.lang]}`;
+    $("ex2").innerHTML = `<b>${t.fac}:</b> × ${Fmt.num(ratio)}`;
+    $("ex3").innerHTML = `<b>${t.cal}:</b> ${Fmt.num(n)} × ${Fmt.num(ratio)} = <b>${Fmt.num(res)}</b> ${tU.sym}`;
+  },
+
+  quick(n){
+    const list = Conv.list(S.cat);
+    $("quickCnt").textContent = list.length + " " + T().thU.toLowerCase();
+    $("qgrid").innerHTML = list.map(u => {
+      const on = (u.id === S.from || u.id === S.to) ? " on" : "";
+      const starred = (S.favs[S.cat] || []).includes(u.id) ? " on" : "";
+      const v = n === null ? "—" : Fmt.num(Conv.convert(n, S.cat, S.from, u.id));
+      return `<div class="qitem${on}" data-unit="${u.id}">
+        <span class="qstar${starred}" data-star="${u.id}">★</span>
+        <div class="qname">${u.names[S.lang]}</div>
+        <div class="qval">${v}</div>
+        <div class="qsym">${u.sym}</div>
+      </div>`;
+    }).join("");
+  },
+
+  table(n){
+    const list = Conv.list(S.cat);
+    $("tbody").innerHTML = list.map(u => {
+      const hl = (u.id === S.from || u.id === S.to) ? " hl" : "";
+      const starred = (S.favs[S.cat] || []).includes(u.id) ? " on" : "";
+      const v = n === null ? "—" : Fmt.num(Conv.convert(n, S.cat, S.from, u.id));
+      return `<tr class="${hl.trim()}">
+        <td class="c-name">${u.names[S.lang]}</td>
+        <td class="c-sym">${u.sym}</td>
+        <td class="c-val">${v}</td>
+        <td class="c-star${starred}" data-star="${u.id}">★</td>
+      </tr>`;
+    }).join("");
+  },
+
+  _histTimer:null,
+  scheduleHist(fmt){
+    clearTimeout(this._histTimer);
+    this._histTimer = setTimeout(() => {
+      const last = S.hist[0];
+      if(last && last.cat === S.cat && last.from === S.from &&
+         last.to === S.to && last.value === S.value) return;
+      S.hist.unshift({
+        cat:S.cat, from:S.from, to:S.to,
+        value:S.value, result:fmt, ts:Date.now()
+      });
+      if(S.hist.length > 40) S.hist.length = 40;
+      saveState();
+      this.histBadge();
+    }, 1200);
+  },
+
+  histList(){
+    const t = T();
+    if(!S.hist.length){
+      $("hlist").innerHTML = `<div class="hempty">${t.histEmp}</div>`;
+      return;
+    }
+    $("hlist").innerHTML = S.hist.map((h, i) => {
+      const fU = Conv.find(h.cat, h.from);
+      const tU = Conv.find(h.cat, h.to);
+      if(!fU || !tU) return "";
+      const time = new Date(h.ts).toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"});
+      return `<div class="hitem" data-idx="${i}">
+        <span class="hex">${h.value} ${fU.sym} = <b>${h.result}</b> ${tU.sym}</span>
+        <span class="ht">${time}</span>
+      </div>`;
+    }).join("");
+  },
+
+  histBadge(){
+    const b = $("histBadge");
+    const n = S.hist.length;
+    if(n > 0){ b.textContent = n > 99 ? "99+" : n; b.style.display = ""; }
+    else b.style.display = "none";
+  },
+
+  settings(){
+    document.querySelectorAll("#segTheme button").forEach(b =>
+      b.classList.toggle("on", b.dataset.v === S.theme));
+    document.querySelectorAll("#segDec button").forEach(b =>
+      b.classList.toggle("on", b.dataset.v === S.dec));
+    $("swSci").classList.toggle("on", S.sci);
+    $("swTh").classList.toggle("on", S.th);
+  }
+};
+
+/* ═══════════════════════════════════════════════════════════
+   ⑥ SEARCH
+   ═══════════════════════════════════════════════════════════ */
+const Search = {
+  run(q){
+    const box = $("searchRes");
+    q = q.trim().toLowerCase();
+    if(!q){ box.classList.remove("on"); box.innerHTML = ""; return; }
+    const lang = S.lang;
+    const out = [];
+    for(const cat in UNITS){
+      for(const u of UNITS[cat].list){
+        const hay = [u.names.ug, u.names.ar, u.names.tr, u.names.en, u.sym, u.id]
+          .join(" ").toLowerCase();
+        if(hay.includes(q)){ out.push({cat, u}); if(out.length >= 30) break; }
+      }
+      if(out.length >= 30) break;
+    }
+    if(!out.length){
+      box.innerHTML = `<div class="sempty">${T().sEmp}</div>`;
+      box.classList.add("on");
+      return;
+    }
+    box.innerHTML = out.map(r => `
+      <div class="sitem" data-cat="${r.cat}" data-unit="${r.u.id}">
+        <span class="sn">${r.u.names[lang]}</span>
+        <span class="ss">${r.u.sym}</span>
+        <span class="sc">${T().cats[r.cat]}</span>
+      </div>
+    `).join("");
+    box.classList.add("on");
+  },
+  close(){ $("searchRes").classList.remove("on"); }
+};
+
+/* ═══════════════════════════════════════════════════════════
+   ⑦ EVENTS
+   ═══════════════════════════════════════════════════════════ */
+function bind(){
+  $("langTabs").addEventListener("click", e => {
+    const b = e.target.closest("[data-lang]"); if(!b) return;
+    S.lang = b.dataset.lang; saveState(); R.all(); R.settings();
+  });
+
+  $("catTabs").addEventListener("click", e => {
+    const b = e.target.closest("[data-cat]"); if(!b) return;
+    const cat = b.dataset.cat;
+    S.cat = cat;
+    document.documentElement.setAttribute("data-cat", cat);
+    const list = Conv.list(cat);
+    if(!list.find(u => u.id === S.from)) S.from = list[0].id;
+    if(!list.find(u => u.id === S.to)) S.to = list[1] ? list[1].id : list[0].id;
+    saveState(); R.cats(); R.selOpts(); R.update();
+  });
+
+  $("fromInput").addEventListener("input", e => {
+    S.value = e.target.value; R.update(); saveState();
+  });
+
+  $("fromSel").addEventListener("change", e => {
+    S.from = e.target.value; saveState(); R.update();
+  });
+  $("toSel").addEventListener("change", e => {
+    S.to = e.target.value; saveState(); R.update();
+  });
+
+  $("swapBtn").addEventListener("click", () => {
+    const tmp = S.from; S.from = S.to; S.to = tmp;
+    saveState(); R.selOpts(); R.update();
+  });
+
+  $("copyBtn").addEventListener("click", async () => {
+    const txt = $("resultV").textContent;
+    if(!txt || txt === "—") return;
+    try{ await navigator.clipboard.writeText(txt); }
+    catch(err){
+      const ta = document.createElement("textarea");
+      ta.value = txt; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand("copy"); }catch(_){}
+      ta.remove();
+    }
+    const btn = $("copyBtn");
+    const old = btn.textContent;
+    btn.classList.add("done");
+    btn.textContent = T().copied;
+    Toast.show("✓ " + T().copied);
+    setTimeout(() => {
+      btn.classList.remove("done");
+      btn.textContent = old;
+    }, 1400);
+  });
+
+  $("qgrid").addEventListener("click", e => {
+    const star = e.target.closest("[data-star]");
+    if(star){
+      e.stopPropagation();
+      const uid = star.dataset.star;
+      if(!S.favs[S.cat]) S.favs[S.cat] = [];
+      const arr = S.favs[S.cat];
+      const i = arr.indexOf(uid);
+      if(i >= 0){ arr.splice(i, 1); Toast.show(T().favR); }
+      else{ arr.push(uid); Toast.show(T().favA); }
+      saveState();
+      const p = Parser.eval(S.value);
+      R.quick(p.ok ? p.value : null);
+      R.table(p.ok ? p.value : null);
+      return;
+    }
+    const item = e.target.closest(".qitem");
+    if(!item) return;
+    const uid = item.dataset.unit;
+    if(uid === S.from) return;
+    S.to = uid; saveState(); R.selOpts(); R.update();
+  });
+
+  $("tbody").addEventListener("click", e => {
+    const star = e.target.closest("[data-star]"); if(!star) return;
+    const uid = star.dataset.star;
+    if(!S.favs[S.cat]) S.favs[S.cat] = [];
+    const arr = S.favs[S.cat];
+    const i = arr.indexOf(uid);
+    if(i >= 0){ arr.splice(i, 1); Toast.show(T().favR); }
+    else{ arr.push(uid); Toast.show(T().favA); }
+    saveState();
+    const p = Parser.eval(S.value);
+    R.quick(p.ok ? p.value : null);
+    R.table(p.ok ? p.value : null);
+  });
+
+  const si = $("searchInput");
+  si.addEventListener("input", e => Search.run(e.target.value));
+  si.addEventListener("focus", e => { if(e.target.value.trim()) Search.run(e.target.value); });
+  document.addEventListener("click", e => {
+    if(!e.target.closest(".search-wrap")) Search.close();
+  });
+  $("searchRes").addEventListener("click", e => {
+    const item = e.target.closest(".sitem"); if(!item) return;
+    const cat = item.dataset.cat, uid = item.dataset.unit;
+    S.cat = cat; S.from = uid;
+    document.documentElement.setAttribute("data-cat", cat);
+    const list = Conv.list(cat);
+    if(!list.find(u => u.id === S.to) || S.to === uid){
+      const alt = list.find(u => u.id !== uid);
+      S.to = alt ? alt.id : uid;
+    }
+    saveState(); R.cats(); R.selOpts(); R.update();
+    Search.close(); si.value = ""; si.blur();
+  });
+
+  $("themeBtn").addEventListener("click", () => {
+    const cur = document.documentElement.getAttribute("data-theme");
+    S.theme = cur === "dark" ? "light" : "dark";
+    saveState(); Theme.apply(); R.settings();
+  });
+
+  $("settingsBtn").addEventListener("click", () => {
+    R.settings(); Modal.open("settingsModal");
+  });
+  $("historyBtn").addEventListener("click", () => {
+    R.histList(); Modal.open("historyModal");
+  });
+
+  document.querySelectorAll("[data-close]").forEach(b => {
+    b.addEventListener("click", () => Modal.close(b.dataset.close));
+  });
+  document.querySelectorAll(".modal").forEach(m => {
+    m.addEventListener("click", e => {
+      if(e.target === m) Modal.close(m.id);
+    });
+  });
+
+  $("segTheme").addEventListener("click", e => {
+    const b = e.target.closest("[data-v]"); if(!b) return;
+    S.theme = b.dataset.v; saveState(); Theme.apply(); R.settings();
+  });
+
+  $("segDec").addEventListener("click", e => {
+    const b = e.target.closest("[data-v]"); if(!b) return;
+    S.dec = b.dataset.v; saveState(); R.settings(); R.update();
+  });
+
+  $("swSci").addEventListener("click", () => {
+    S.sci = !S.sci; saveState(); R.settings(); R.update();
+  });
+  $("swTh").addEventListener("click", () => {
+    S.th = !S.th; saveState(); R.settings(); R.update();
+  });
+
+  $("clearHist").addEventListener("click", () => {
+    S.hist = []; saveState(); R.histList(); R.histBadge();
+    Toast.show(T().clr);
+  });
+
+  $("hlist").addEventListener("click", e => {
+    const item = e.target.closest(".hitem"); if(!item) return;
+    const h = S.hist[parseInt(item.dataset.idx, 10)];
+    if(!h) return;
+    S.cat = h.cat; S.from = h.from; S.to = h.to; S.value = h.value;
+    document.documentElement.setAttribute("data-cat", S.cat);
+    saveState(); R.cats(); R.selOpts();
+    $("fromInput").value = S.value;
+    R.update();
+    Modal.close("historyModal");
+  });
+
+  document.addEventListener("keydown", e => {
+    if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k"){
+      e.preventDefault(); si.focus(); si.select();
+    }
+    if(e.key === "Escape"){ Modal.closeAll(); Search.close(); }
+  });
+
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if(S.theme === "auto") Theme.apply();
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ⑧ INIT
+   ═══════════════════════════════════════════════════════════ */
+(function init(){
+  loadState();
+  document.documentElement.setAttribute("data-cat", S.cat);
+  Theme.apply();
+  R.all();
+  R.settings();
+  R.histBadge();
+  bind();
+})();
+</script>
+</body>
+</html>
